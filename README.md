@@ -63,13 +63,13 @@
     "ARCH" : {
         "PRJ_Path": "",
         "Hardware" : {
-            "src"  : "",  // 放置设计源文件，注: src上一级为IP&bd
-            "sim"  : "",  // 放置仿真文件，会直接反应在树状结构上
-            "data" : ""   // 放置约束、数据文件，约束会自动添加进vivado工程
+            "src"  : "${workspace}/hardware/${plname}.src",  // 放置设计源文件，注: src上一级为IP&bd
+            "sim"  : "${workspace}/hardware/${plname}.sim",  // 放置仿真文件，会直接反应在树状结构上
+            "data" : "${workspace}/hardware/${plname}.dat"   // 放置约束、数据文件，约束会自动添加进vivado工程
         },
         "Software" : {
-            "src"  : "",
-            "data" : ""
+            "src"  : "${workspace}/software/${psname}.src",  // = D:/workspace/template.src
+            "data" : "${workspace}/software/${psname}.dat"
         }
     },
 
@@ -145,7 +145,7 @@ user               -- 用于存放用户设计的源文件 用户自定义
 提供前端代码设计所需的基本语言服务
 
 ### 语言高亮
-![语言高亮.png](https://i.loli.net/2021/03/19/3qzOwZkIMay5rvD.png)
+![语言高亮.png](./image/语法高亮.png)
 现支持以下语言的高亮
 1. HDL
    - verilog & systemverilog
@@ -156,7 +156,7 @@ user               -- 用于存放用户设计的源文件 用户自定义
    - fdc (包括xdc、sdc、fdc约束文件)
 
 ### 语法诊断
-![语法诊断.png](https://i.loli.net/2021/03/19/bSQFuNgZzaTknwD.png)
+![语法诊断.png](./image/语法检查.png)
 在该插件0.2.0版本之后将支持自带的语法诊断器，支持的语法有：
 - vhdl
 - verilog
@@ -180,7 +180,7 @@ user               -- 用于存放用户设计的源文件 用户自定义
     4. default
 
 ### 文件标识
-![文件标识.png](https://i.loli.net/2021/03/19/42KuR8l5brX1Hz7.png)
+![文件标识.png](./image/文件标识.png)
 文件标识为大纲（outline）显示的内容，能快速preview整个工程。
 关于支持的定义类型会持续更新。
 
